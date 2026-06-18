@@ -1,5 +1,6 @@
 from pyscript import window
 from js import document
+from pyodide.ffi import create_proxy
 import random
 
 canvas = document.getElementById("game")
@@ -37,7 +38,13 @@ def keydown(event):
         direction = (1, 0)
 
 
-document.addEventListener("keydown", keydown)
+keydown_proxy = create_proxy(keydown)
+document.addEventListener("keydown", keydown_proxy)
+
+draw()
+
+update_proxy = create_proxy(update)
+window.setInterval(update_proxy, 150)
 
 
 def draw():
