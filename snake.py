@@ -38,15 +38,6 @@ def keydown(event):
         direction = (1, 0)
 
 
-keydown_proxy = create_proxy(keydown)
-document.addEventListener("keydown", keydown_proxy)
-
-draw()
-
-update_proxy = create_proxy(update)
-window.setInterval(update_proxy, 150)
-
-
 def draw():
     ctx.fillStyle = "white"
     ctx.fillRect(0, 0, 400, 400)
@@ -112,6 +103,10 @@ def update():
     draw()
 
 
+keydown_proxy = create_proxy(keydown)
+document.addEventListener("keydown", keydown_proxy)
+
 draw()
 
-window.setInterval(update, 150)
+update_proxy = create_proxy(update)
+window.setInterval(update_proxy, 150)
