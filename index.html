@@ -1,23 +1,27 @@
+```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snake</title>
-
-    <link rel="stylesheet"
-          href="https://pyscript.net/releases/2025.3.1/core.css">
-
-    <script type="module"
-            src="https://pyscript.net/releases/2025.3.1/core.js"></script>
 
     <style>
         body {
             text-align: center;
             font-family: Arial, sans-serif;
+            background: #f0f0f0;
         }
 
         canvas {
             border: 2px solid black;
+            background: white;
             margin-top: 20px;
+        }
+
+        #score {
+            font-size: 20px;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -25,9 +29,14 @@
 
     <h1>Snake</h1>
 
+    <div id="score">Score: 0</div>
+
     <canvas id="game" width="400" height="400"></canvas>
 
-    <script type="py" src="./snake.py"></script>
+    <p>Use the arrow keys to move.</p>
+
+    <script src="snake.js"></script>
 
 </body>
 </html>
+```
