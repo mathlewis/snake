@@ -1,4 +1,3 @@
-```javascript
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 const scoreDisplay = document.getElementById("score");
@@ -130,4 +129,3 @@ function update() {
 
 draw();
 setInterval(update, 150);
-```
